@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Color Flipper</title>
+    <!-- My style sheet starts from here -->
+        <style>
+            h1{
+                background-color: cadetblue;
+                width: 450px;
+                height: 60px;
+                border-radius: 10px;
+                padding: 15px 0px 0px 20px;
+                justify-content: center;
+                display: flex;
+            }
+            #btn{
+                cursor: pointer;
+                margin-left: 180px;
+            }
+        </style>
+</head>
+
+<body>
+    <!-- My html starts from here -->
+    <h1>BackgroundColour: <span id="colour">#f15025</span> </h1>
+    <button id="btn">Click here</button>
+</body>
+
+    <!-- Javascript Starts From Here -->
+    <script>
+        // Getting Elements by their id 
+        const color = ["red", "blue", "green", "yellow", "purple", "grey"]
+        const btn = document.getElementById("btn");
+        const colour = document.querySelector(".colour");
+        
+        // Creating a function 
+        btn.addEventListener("click",function(){
+        const randomNumber = getRandomNumber();
+        document.body.style.background = color[randomNumber];
+        color.innerHTML = color[randomNumber]
+        });
+
+        function getRandomNumber(){
+            return Math.floor(Math.random()* color.length)
+        };
+
+    </script>
+</html>
